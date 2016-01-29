@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: cursoLaravel
+        psr4_prefix: cursoLaravel
+        src_path: app
