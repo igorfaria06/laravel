@@ -19,3 +19,17 @@ Route::post('/client', 'ClientController@store');
 Route::get('/client/{id}', 'ClientController@show');
 Route::post('/client/{id}', 'ClientController@update');
 Route::delete('/client/{id}', 'ClientController@destroy');
+
+Route::get('/projeto/{id}/notas', 'ProjetoNotasController@index');
+Route::post('/projeto/{id}/notas', 'ProjetoNotasController@store');
+Route::get('/projeto/{id}/notas/{idNota}', 'ProjetoNotasController@show');
+Route::put('/projeto/{id}/notas/{idNota}', 'ProjetoNotasController@update');
+Route::delete('/projeto/{id}/notas/{idNota}', 'ProjetoNotasController@destroy');
+
+
+Route::get('/projeto', 'ProjetoController@index');
+Route::post('/projeto', 'ProjetoController@store');
+Route::get('/projeto/{id}', 'ProjetoController@show');
+Route::post('/projeto/{id}', 'ProjetoController@update');
+Route::delete('/projeto/{id}', 'ProjetoController@destroy');
+

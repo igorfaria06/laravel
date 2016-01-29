@@ -24,6 +24,8 @@ class cursoLaravelRepositoryProvider extends ServiceProvider {
         $this->app->bind(\cursoLaravel\Repositories\ClientRepository::class, \cursoLaravel\Repositories\ClientRepositoryEloquent::class);
 
         $this->app->bind(\cursoLaravel\Repositories\ProjetoRepository::class, \cursoLaravel\Repositories\ProjetoRepositoryEloquent::class);
+        
+        $this->app->bind(\cursoLaravel\Repositories\ProjetoNotasRepository::class, \cursoLaravel\Repositories\ProjetoNotasRepositoryEloquent::class);
     }
 
 }

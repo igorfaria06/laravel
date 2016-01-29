@@ -44,3 +44,12 @@ $factory->define(cursoLaravel\Entities\Projeto::class, function (Faker\Generator
         'due_date' => $faker->dateTime('now'),
     ];
 });
+
+$factory->define(cursoLaravel\Entities\ProjetoNotas::class, function (Faker\Generator $faker) {
+    return [
+
+        'projeto_id' => rand(1, 10),
+        'title' => $faker->sentence,
+        'nota' => $faker->paragraph,
+    ];
+});
