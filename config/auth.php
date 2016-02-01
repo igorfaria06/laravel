@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => cursoLaravel\User::class,
+    'model' => cursoLaravel\Entities\User::class,
 
     /*
     |--------------------------------------------------------------------------
