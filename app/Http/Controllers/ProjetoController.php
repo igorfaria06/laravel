@@ -30,7 +30,7 @@ class ProjetoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return $this->repository->all();
+        return $this->repository->findWhere(['owner_id' => \Authorizer::getResourceOwnerId()]);
     }
 
     /**
@@ -50,7 +50,9 @@ class ProjetoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-
+        
+        
+        dd($this->checarProjetoMembros($id));
         return $this->repository->find($id);
     }
 
@@ -83,6 +85,18 @@ class ProjetoController extends Controller {
      */
     public function destroy($id) {
         $this->repository->find($id)->delete();
+    }
+
+    private function checarProjetoDono($id) {
+        $userId = \Authorizer::getResourceOwnerId();
+
+        return $this->repository->isOwner($id, $userId);
+    }
+
+    private function checarProjetoMembros($id) {
+        $userId = \Authorizer::getResourceOwnerId();
+
+        return $this->repository->isMember($id, $userId);
     }
 
 }

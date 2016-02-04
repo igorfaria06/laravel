@@ -24,4 +24,7 @@ class Projeto extends Model implements Transformable {
         return $this->hasMany(ProjetoNotas::class);
     }
 
+    public function membros() {
+        return $this->belongsToMany(User::class, 'projeto_membros', 'projeto_id', 'membro_id');
+    }
 }
