@@ -7,13 +7,12 @@ use cursoLaravel\Http\Controllers\Controller;
 use cursoLaravel\Repositories\ProjetoRepository;
 use cursoLaravel\Services\ProjetoService;
 
-class ProjetoController extends Controller {
+
+class ProjetoArquivosController extends Controller {
     /*
      * @var ClientRepository
      */
-
     private $repository;
-
     /*
      * @var ClientService
      */
@@ -40,8 +39,13 @@ class ProjetoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        return $this->service->create($request->all());
-    }
+                
+        $data['arquivo'] = $request->file('file');
+        $data['extension'] = $request->file('file')->getClientOriginalExtension();
+        $data['name'] = $request->name;
+        
+        $this->service->createFile($data);
+}
 
     /**
      * Display the specified resource.
@@ -97,7 +101,6 @@ class ProjetoController extends Controller {
     }
 
     private function checarProjetoPermissao($id) {
-
         if ($this->checarProjetoDono($id) or $this->checarProjetoMembros($id)):
             return true;
         endif;

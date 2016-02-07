@@ -12,6 +12,8 @@ use cursoLaravel\Repositories\ProjetoRepository;
 use cursoLaravel\Validators\ProjetoValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
+use	Illuminate\Contracts\Filesystem\Factory as Storage;
+use Illuminate\Filesystem\Filesystem;
 
 /**
  * Description of ClientService
@@ -22,10 +24,14 @@ class ProjetoService {
 
     private $repository;
     private $validator;
+    private $filesystem;
+    private $storage;
     
-    public function __construct(ProjetoRepository $repository, ProjetoValidator $validator) {
+    public function __construct(ProjetoRepository $repository, ProjetoValidator $validator, Filesystem $filesystem, Storage $storage) {
         $this->repository = $repository;
         $this->validator = $validator;
+        $this->filesystem = $filesystem;
+        $this->storage = $storage;
     }
 
     public function create(array $data) {
@@ -46,6 +52,19 @@ class ProjetoService {
         try {
             $this->validator->with($data)->passesOrFail();
             return $this->repository->update($data, $id);
+        } catch (ValidatorException $ex) {
+            return [
+                'error' => true,
+                'message' => $ex->getMessageBag()
+            ];
+        }
+    }
+    
+    public function createFile($data) {
+
+        try {
+            $this->storage->put($data['name'].'.'.$data['extension'], $this->filesystem->get($data['arquivo']));
+            return true;
         } catch (ValidatorException $ex) {
             return [
                 'error' => true,

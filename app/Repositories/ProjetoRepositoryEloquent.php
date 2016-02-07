@@ -6,6 +6,7 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use cursoLaravel\Repositories\ProjetoRepository;
 use cursoLaravel\Entities\Projeto;
+use cursoLaravel\Presenters\ProjetoPresenter;
 
 /**
  * Class ProjetoRepositoryEloquent
@@ -38,7 +39,7 @@ class ProjetoRepositoryEloquent extends BaseRepository implements ProjetoReposit
         endif;
     }
 
-    public function isMember($projetoId, $userId) {
+    public function hasMember($projetoId, $userId) {
 
         $projeto = Projeto::find($projetoId);
         foreach ($projeto->membros as $membro):
@@ -49,4 +50,8 @@ class ProjetoRepositoryEloquent extends BaseRepository implements ProjetoReposit
         return false;
     }
 
+    public function presenter(){
+        return ProjetoPresenter::class;
+    }
+    
 }

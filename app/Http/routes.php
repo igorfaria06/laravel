@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'teste';
 });
 
 Route::post('/oauth/access_token', function () {
@@ -32,6 +32,9 @@ Route::group(['middleware' => 'oauth'], function () {
         Route::get('{id}/notas/{idNota}', 'ProjetoNotasController@show');
         Route::put('{id}/notas/{idNota}', 'ProjetoNotasController@update');
         Route::delete('{id}/notas/{idNota}', 'ProjetoNotasController@destroy');
+       
+        
+        Route::post('{id}/file', 'ProjetoArquivosController@store');
     });
 });
 
