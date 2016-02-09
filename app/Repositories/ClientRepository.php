@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace cursoLaravel\Repositories;
+namespace finLaravel\Repositories;
 
 use Prettus\Repository\Contracts\RepositoryInterface;
 

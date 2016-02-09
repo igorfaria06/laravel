@@ -6,10 +6,10 @@
  * and open the template in the editor.
  */
 
-namespace cursoLaravel\Services;
+namespace finLaravel\Services;
 
-use cursoLaravel\Repositories\ProjetoRepository;
-use cursoLaravel\Validators\ProjetoValidator;
+use finLaravel\Repositories\ProjetoRepository;
+use finLaravel\Validators\ProjetoValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 use	Illuminate\Contracts\Filesystem\Factory as Storage;

@@ -6,10 +6,10 @@
  * and open the template in the editor.
  */
 
-namespace cursoLaravel\Services;
+namespace finLaravel\Services;
 
-use cursoLaravel\Repositories\ClientRepository;
-use cursoLaravel\Validators\ClientValidator;
+use finLaravel\Repositories\ClientRepository;
+use finLaravel\Validators\ClientValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 
 

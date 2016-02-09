@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Events;
+namespace finLaravel\Events;
 
 abstract class Event
 {

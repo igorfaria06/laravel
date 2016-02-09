@@ -6,10 +6,10 @@
  * and open the template in the editor.
  */
 
-namespace cursoLaravel\Services;
+namespace finLaravel\Services;
 
-use cursoLaravel\Repositories\ProjetoNotasRepository;
-use cursoLaravel\Validators\ProjetoNotasValidator;
+use finLaravel\Repositories\ProjetoNotasRepository;
+use finLaravel\Validators\ProjetoNotasValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 /**
  * Description of ProjetoNotasService

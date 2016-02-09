@@ -219,7 +219,7 @@ return [
     */
     'generator'=>[
         'basePath'=>app_path(),
-        'rootNamespace'=>'cursoLaravel\\',
+        'rootNamespace'=>'finLaravel\\',
         'paths'=>[
             'models'=>'Entities',
             'repositories'=>'Repositories',

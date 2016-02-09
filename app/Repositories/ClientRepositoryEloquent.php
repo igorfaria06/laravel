@@ -6,11 +6,11 @@
  * and open the template in the editor.
  */
 
-namespace cursoLaravel\Repositories;
+namespace finLaravel\Repositories;
 
-use cursoLaravel\Entities\Client;
+use finLaravel\Entities\Client;
 use Prettus\Repository\Eloquent\BaseRepository;
-use cursoLaravel\Repositories\ClientRepository;
+use finLaravel\Repositories\ClientRepository;
 
 /**
  * Description of ClientRepositoryEloquent

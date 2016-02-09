@@ -11,45 +11,28 @@
   |
  */
 
-$factory->define(cursoLaravel\Entities\User::class, function (Faker\Generator $faker) {
+$factory->define(finLaravel\Entities\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'nome' => $faker->name,
+        'sexo' => $faker->word,
         'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'senha' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
 });
 
-$factory->define(cursoLaravel\Entities\Client::class, function (Faker\Generator $faker) {
+$factory->define(finLaravel\Entities\Banco::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'responsible' => $faker->name,
-        'email' => $faker->email,
-        'phone' => $faker->phoneNumber,
-        'adress' => $faker->address,
-        'obs' => $faker->sentence,
+        'nome' => $faker->name,
+        'pais' => $faker->country,
     ];
 });
 
-
-$factory->define(cursoLaravel\Entities\Projeto::class, function (Faker\Generator $faker) {
+$factory->define(finLaravel\Entities\ContaBancaria::class, function (Faker\Generator $faker) {
     return [
-
-        'owner_id' => rand(1, 10),
-        'client_id' => rand(1, 10),
-        'name' => $faker->name,
-        'description' => $faker->sentence,
-        'progress' => rand(1, 10),
-        'status' => rand(1, 3),
-        'due_date' => $faker->dateTime('now'),
-    ];
-});
-
-$factory->define(cursoLaravel\Entities\ProjetoNotas::class, function (Faker\Generator $faker) {
-    return [
-
-        'projeto_id' => rand(1, 10),
-        'title' => $faker->sentence,
-        'nota' => $faker->paragraph,
+        'dono_id' => rand(1, 10),
+        'banco_id' => rand(1, 10),
+        'conta' => $faker->word,
+        'descricao' => $faker->sentence,
     ];
 });

@@ -1,11 +1,11 @@
 <?php
 
-namespace cursoLaravel\Http\Controllers;
+namespace finLaravel\Http\Controllers;
 
 use Illuminate\Http\Request;
-use cursoLaravel\Http\Controllers\Controller;
-use cursoLaravel\Repositories\ClientRepository;
-use cursoLaravel\Services\ClientService;
+use finLaravel\Http\Controllers\Controller;
+use finLaravel\Repositories\ClientRepository;
+use finLaravel\Services\ClientService;
 
 class ClientController extends Controller {
     /*

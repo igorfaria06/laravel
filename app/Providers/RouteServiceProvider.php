@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Providers;
+namespace finLaravel\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'cursoLaravel\Http\Controllers';
+    protected $namespace = 'finLaravel\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjetoArquivosTable extends Migration
+class CreateBancosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateProjetoArquivosTable extends Migration
      */
     public function up()
     {
-        Schema::create('projeto_arquivos', function (Blueprint $table) {
+        Schema::create('bancos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('description');
-            $table->string('extension');
+            $table->string('nome');
+            $table->string('pais');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateProjetoArquivosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('projeto_arquivos');
+        Schema::drop('bancos');
     }
 }

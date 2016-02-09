@@ -6,9 +6,9 @@
  * and open the template in the editor.
  */
 
-namespace cursoLaravel\Transformers;
+namespace finLaravel\Transformers;
 
-use cursoLaravel\Entities\User;
+use finLaravel\Entities\User;
 use League\Fractal\TransformerAbstract;
 
 /**

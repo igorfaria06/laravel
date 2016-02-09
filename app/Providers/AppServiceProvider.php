@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Providers;
+namespace finLaravel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

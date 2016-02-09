@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Http;
+namespace finLaravel\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,7 +13,7 @@ class Kernel extends HttpKernel {
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \cursoLaravel\Http\Middleware\EncryptCookies::class,
+        \finLaravel\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
@@ -26,15 +26,15 @@ class Kernel extends HttpKernel {
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \cursoLaravel\Http\Middleware\Authenticate::class,
+        'auth' => \finLaravel\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \cursoLaravel\Http\Middleware\RedirectIfAuthenticated::class,
-        'csrf' => \cursoLaravel\Http\Middleware\VerifyCsrfToken::class,
+        'guest' => \finLaravel\Http\Middleware\RedirectIfAuthenticated::class,
+        'csrf' => \finLaravel\Http\Middleware\VerifyCsrfToken::class,
         'oauth' => \LucaDegasperi\OAuth2Server\Middleware\OAuthMiddleware::class,
         'oauth-user' => \LucaDegasperi\OAuth2Server\Middleware\OAuthUserOwnerMiddleware::class,
         'oauth-client' => \LucaDegasperi\OAuth2Server\Middleware\OAuthClientOwnerMiddleware::class,
         'check-authorization-params' => \LucaDegasperi\OAuth2Server\Middleware\CheckAuthCodeRequestMiddleware::class,
-        'checarProjetoDono' => \cursoLaravel\Http\Middleware\ChecarDonoProjeto::class,
+        'checarProjetoDono' => \finLaravel\Http\Middleware\ChecarDonoProjeto::class,
     ];
 
 }

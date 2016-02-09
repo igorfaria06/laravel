@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Entities;
+namespace finLaravel\Entities;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -28,17 +28,21 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['nome', 'sexo', 'email', 'senha'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['senha', 'remember_token'];
     
     public function projetos() {
         return $this->belongsToMany(Projeto::class, 'projeto_membros', 'membro_id', 'projeto_id');
+    }
+    
+    public function contas() {
+        return $this->hasMany(ContaBancaria::class, 'dono_id', 'id');
     }
     
 }

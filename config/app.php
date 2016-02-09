@@ -24,7 +24,7 @@ return [
       | your application so that it is used when running Artisan tasks.
       |
      */
-    'url' => 'http://cursoschool.dev',
+    'url' => 'http://financeiro.dev',
     /*
       |--------------------------------------------------------------------------
       | Application Timezone
@@ -127,11 +127,11 @@ return [
         /*
          * Application Service Providers...
          */
-        cursoLaravel\Providers\AppServiceProvider::class,
-        cursoLaravel\Providers\AuthServiceProvider::class,
-        cursoLaravel\Providers\EventServiceProvider::class,
-        cursoLaravel\Providers\RouteServiceProvider::class,
-        cursoLaravel\Providers\cursoLaravelRepositoryProvider::class
+        finLaravel\Providers\AppServiceProvider::class,
+        finLaravel\Providers\AuthServiceProvider::class,
+        finLaravel\Providers\EventServiceProvider::class,
+        finLaravel\Providers\RouteServiceProvider::class,
+        finLaravel\Providers\finLaravelRepositoryProvider::class
     ],
     /*
       |--------------------------------------------------------------------------

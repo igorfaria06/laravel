@@ -6,10 +6,10 @@
  * and open the template in the editor.
  */
 
-namespace cursoLaravel\Presenters;
+namespace finLaravel\Presenters;
 
 use Prettus\Repository\Presenter\FractalPresenter;
-use cursoLaravel\Transformers\ProjetoTransformer;
+use finLaravel\Transformers\ProjetoTransformer;
 
 /**
  * Description of ProjetoPresenter

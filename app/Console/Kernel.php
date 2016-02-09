@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Console;
+namespace finLaravel\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \cursoLaravel\Console\Commands\Inspire::class,
+        \finLaravel\Console\Commands\Inspire::class,
     ];
 
     /**

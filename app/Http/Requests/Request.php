@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Http\Requests;
+namespace finLaravel\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

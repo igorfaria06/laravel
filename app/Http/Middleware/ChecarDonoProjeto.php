@@ -1,9 +1,9 @@
 <?php
 
-namespace cursoLaravel\Http\Middleware;
+namespace finLaravel\Http\Middleware;
 
 use Closure;
-use cursoLaravel\Repositories\ProjetoRepository;
+use finLaravel\Repositories\ProjetoRepository;
 
 class ChecarDonoProjeto {
 

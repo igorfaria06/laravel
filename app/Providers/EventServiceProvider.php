@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Providers;
+namespace finLaravel\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'cursoLaravel\Events\SomeEvent' => [
-            'cursoLaravel\Listeners\EventListener',
+        'finLaravel\Events\SomeEvent' => [
+            'finLaravel\Listeners\EventListener',
         ],
     ];
 

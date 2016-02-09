@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Providers;
+namespace finLaravel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -21,11 +21,15 @@ class cursoLaravelRepositoryProvider extends ServiceProvider {
      * @return void
      */
     public function register() {
-        $this->app->bind(\cursoLaravel\Repositories\ClientRepository::class, \cursoLaravel\Repositories\ClientRepositoryEloquent::class);
-
-        $this->app->bind(\cursoLaravel\Repositories\ProjetoRepository::class, \cursoLaravel\Repositories\ProjetoRepositoryEloquent::class);
+        $this->app->bind(\finLaravel\Repositories\ClientRepository::class, \finLaravel\Repositories\ClientRepositoryEloquent::class);
         
-        $this->app->bind(\cursoLaravel\Repositories\ProjetoNotasRepository::class, \cursoLaravel\Repositories\ProjetoNotasRepositoryEloquent::class);
+        $this->app->bind(\finLaravel\Repositories\BancoRepository::class, \finLaravel\Repositories\BancoRepositoryEloquent::class);
+        
+        $this->app->bind(\finLaravel\Repositories\ContaBancariaRepository::class, \finLaravel\Repositories\ContaBancariaRepositoryEloquent::class);
+
+        $this->app->bind(\finLaravel\Repositories\ProjetoRepository::class, \finLaravel\Repositories\ProjetoRepositoryEloquent::class);
+        
+        $this->app->bind(\finLaravel\Repositories\ProjetoNotasRepository::class, \finLaravel\Repositories\ProjetoNotasRepositoryEloquent::class);
     }
 
 }

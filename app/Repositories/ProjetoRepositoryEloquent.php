@@ -1,16 +1,16 @@
 <?php
 
-namespace cursoLaravel\Repositories;
+namespace finLaravel\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use cursoLaravel\Repositories\ProjetoRepository;
-use cursoLaravel\Entities\Projeto;
-use cursoLaravel\Presenters\ProjetoPresenter;
+use finLaravel\Repositories\ProjetoRepository;
+use finLaravel\Entities\Projeto;
+use finLaravel\Presenters\ProjetoPresenter;
 
 /**
  * Class ProjetoRepositoryEloquent
- * @package namespace cursoLaravel\Repositories;
+ * @package namespace finLaravel\Repositories;
  */
 class ProjetoRepositoryEloquent extends BaseRepository implements ProjetoRepository {
 

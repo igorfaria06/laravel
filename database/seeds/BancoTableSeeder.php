@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ProjetoTableSeeder extends Seeder {
+class BancoTableSeeder extends Seeder {
 
     /**
      * Run the database seeds.
@@ -12,8 +12,8 @@ class ProjetoTableSeeder extends Seeder {
     public function run() {
 
         // Apaga todos dados da tabela e cria dez registros
-        
-        factory(\cursoLaravel\Entities\Projeto::class, 10)->create();
+
+        factory(\finLaravel\Entities\Banco::class, 10)->create();
     }
 
 }

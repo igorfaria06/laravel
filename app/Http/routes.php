@@ -12,31 +12,63 @@
  */
 
 Route::get('/', function () {
-    return 'teste';
+    return view('welcome');
 });
 
-Route::post('/oauth/access_token', function () {
-    return Response::json(Authorizer::issueAccessToken());
-});
 
-Route::group(['middleware' => 'oauth'], function () {
+Route::get('/user', 'UserController@index');
+Route::post('/user', 'UserController@store');
+Route::get('/user/{id}', 'UserController@show');
+Route::post('/user/{id}', 'UserController@update');
+Route::delete('/user/{id}', 'UserController@destroy');
 
-    Route::resource('client', 'ClientController', ['expect' => ['create', 'edit']]);
 
+Route::get('/banco', 'BancoController@index');
+Route::post('/banco', 'BancoController@store');
+Route::get('/banco/{id}', 'BancoController@show');
+Route::post('/banco/{id}', 'BancoController@update');
+Route::delete('/banco/{id}', 'BancoController@destroy');
 
-    Route::resource('projeto', 'ProjetoController', ['expect' => ['create', 'edit']]);
+Route::get('/conta', 'ContaBancariaController@index');
+Route::post('/conta', 'ContaBancariaController@store');
+Route::get('/conta/{id}', 'ContaBancariaController@show');
+Route::post('/conta/{id}', 'ContaBancariaController@update');
+Route::delete('/conta/{id}', 'ContaBancariaController@destroy');
 
-    Route::group(['prefix' => 'projeto'], function() {
-        Route::get('{id}/notas', 'ProjetoNotasController@index');
-        Route::post('{id}/notas', 'ProjetoNotasController@store');
-        Route::get('{id}/notas/{idNota}', 'ProjetoNotasController@show');
-        Route::put('{id}/notas/{idNota}', 'ProjetoNotasController@update');
-        Route::delete('{id}/notas/{idNota}', 'ProjetoNotasController@destroy');
-       
-        
-        Route::post('{id}/file', 'ProjetoArquivosController@store');
-    });
-});
+//
+//Route::post('/oauth/access_token', function () {
+//    return Response::json(Authorizer::issueAccessToken());
+//});
+//
+//Route::group(['middleware' => 'oauth'], function () {
+//
+//    Route::resource('client', 'ClientController', ['expect' => ['create', 'edit']]);
+//
+//
+//    Route::resource('projeto', 'ProjetoController', ['expect' => ['create', 'edit']]);
+//
+//    Route::group(['prefix' => 'projeto'], function() {
+//        Route::get('{id}/notas', 'ProjetoNotasController@index');
+//        Route::post('{id}/notas', 'ProjetoNotasController@store');
+//        Route::get('{id}/notas/{idNota}', 'ProjetoNotasController@show');
+//        Route::put('{id}/notas/{idNota}', 'ProjetoNotasController@update');
+//        Route::delete('{id}/notas/{idNota}', 'ProjetoNotasController@destroy');
+//       
+//        
+//        Route::post('{id}/file', 'ProjetoArquivosController@store');
+//    });
+//});
+//  Route::group(['prefix' => 'projeto'], function() {
+//        Route::get('{id}/notas', 'ProjetoNotasController@index');
+//        Route::post('{id}/notas', 'ProjetoNotasController@store');
+//        Route::get('{id}/notas/{idNota}', 'ProjetoNotasController@show');
+//        Route::put('{id}/notas/{idNota}', 'ProjetoNotasController@update');
+//        Route::delete('{id}/notas/{idNota}', 'ProjetoNotasController@destroy');
+//       
+//        
+//        Route::post('{id}/file', 'ProjetoArquivosController@store');
+//    });
+//});
 
 
 

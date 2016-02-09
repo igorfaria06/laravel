@@ -1,11 +1,11 @@
 <?php
 
-namespace cursoLaravel\Http\Controllers;
+namespace finLaravel\Http\Controllers;
 
 use Illuminate\Http\Request;
-use cursoLaravel\Http\Controllers\Controller;
-use cursoLaravel\Repositories\ProjetoRepository;
-use cursoLaravel\Services\ProjetoService;
+use finLaravel\Http\Controllers\Controller;
+use finLaravel\Repositories\ProjetoRepository;
+use finLaravel\Services\ProjetoService;
 
 class ProjetoController extends Controller {
     /*

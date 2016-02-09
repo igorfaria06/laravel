@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: cursoLaravel
-        psr4_prefix: cursoLaravel
+        namespace: finLaravel
+        psr4_prefix: finLaravel
         src_path: app

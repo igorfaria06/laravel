@@ -1,6 +1,6 @@
 <?php
 
-namespace cursoLaravel\Http\Middleware;
+namespace finLaravel\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 
