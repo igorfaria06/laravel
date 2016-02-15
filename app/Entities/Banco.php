@@ -16,7 +16,8 @@ class Banco extends Model implements Transformable
     ];
 
     public function contas() {
-        return $this->hasMany(ContaBancaria::class);
+        return $this->hasMany(UserBancoConta::class);
     }
+    
     
 }

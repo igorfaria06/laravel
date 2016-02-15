@@ -10,8 +10,11 @@ namespace finLaravel\Services;
 
 use finLaravel\Repositories\UserRepository;
 use finLaravel\Validators\UserValidator;
+use finLaravel\Validators\UserLoginValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Hash;
+use Response;
+use Authorizer;
 use Illuminate\Contracts\Filesystem\Factory as Storage;
 use Illuminate\Filesystem\Filesystem;
 
@@ -24,12 +27,14 @@ class UserService {
 
     private $repository;
     private $validator;
+    private $loginValidator;
     private $filesystem;
     private $storage;
 
-    public function __construct(UserRepository $repository, UserValidator $validator, Filesystem $filesystem, Storage $storage) {
+    public function __construct(UserRepository $repository, UserValidator $validator, Filesystem $filesystem, Storage $storage, UserLoginValidator $loginValidator) {
         $this->repository = $repository;
         $this->validator = $validator;
+        $this->loginValidator = $loginValidator;
         $this->filesystem = $filesystem;
         $this->storage = $storage;
     }
@@ -38,7 +43,7 @@ class UserService {
 
         try {
             $this->validator->with($data)->passesOrFail();
-            $data['senha'] = Hash::make($data['senha']);
+            $data['password'] = Hash::make($data['password']);
             return $this->repository->create($data);
         } catch (ValidatorException $ex) {
             return [
@@ -52,7 +57,7 @@ class UserService {
 
         try {
             $this->validator->with($data)->passesOrFail();
-            $data['senha'] = Hash::make($data['senha']);
+            $data['password'] = Hash::make($data['password']);
             return $this->repository->update($data, $id);
         } catch (ValidatorException $ex) {
             return [

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use finLaravel\Http\Controllers\Controller;
 use finLaravel\Repositories\UserRepository;
 use finLaravel\Services\UserService;
+use finLaravel\Services\UserLoginService;
 
 class UserController extends Controller {
     /*
@@ -18,10 +19,12 @@ class UserController extends Controller {
      * @var ClientService
      */
     private $service;
+    private $serviceLogin;
 
-    public function __construct(UserRepository $repository, UserService $service) {
+    public function __construct(UserRepository $repository, UserService $service, UserLoginService $serviceLogin) {
         $this->repository = $repository;
         $this->service = $service;
+        $this->serviceLogin = $serviceLogin;
     }
 
     /**
@@ -61,7 +64,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        //
+//
     }
 
     /**
@@ -85,4 +88,8 @@ class UserController extends Controller {
         $this->repository->find($id)->delete();
     }
 
+    public function login(Request $request) {
+        $this->service->login($request->all());
+    }
 }
+    

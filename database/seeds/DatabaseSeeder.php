@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder {
         //\finLaravel\Entities\Projeto::truncate();
         $this->call(UserTableSeeder::class);
         $this->call(BancoTableSeeder::class);
-        $this->call(ContaBancariaTableSeeder::class);
+        $this->call(UserBancoContasTableSeeder::class);
+        $this->call(UserContaDespesasTableSeeder::class);
+        $this->call(UserContaReceitasTableSeeder::class);
         Model::reguard();
     }
 

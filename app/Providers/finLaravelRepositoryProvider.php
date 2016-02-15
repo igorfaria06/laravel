@@ -25,7 +25,11 @@ class finLaravelRepositoryProvider extends ServiceProvider {
 
         $this->app->bind(\finLaravel\Repositories\BancoRepository::class, \finLaravel\Repositories\BancoRepositoryEloquent::class);
 
-        $this->app->bind(\finLaravel\Repositories\ContaBancariaRepository::class, \finLaravel\Repositories\ContaBancariaRepositoryEloquent::class);
+        $this->app->bind(\finLaravel\Repositories\UserBancoContaRepository::class, \finLaravel\Repositories\ContaBancariaRepositoryEloquent::class);
+        
+        $this->app->bind(\finLaravel\Repositories\UserContaDespesaRepository::class, \finLaravel\Repositories\ContaBancariaRepositoryEloquent::class);
+        
+        $this->app->bind(\finLaravel\Repositories\UserContaReceitaRepository::class, \finLaravel\Repositories\ContaBancariaRepositoryEloquent::class);
     }
 
 }

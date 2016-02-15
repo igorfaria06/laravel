@@ -20,6 +20,6 @@ class UserValidator extends LaravelValidator {
         'nome'=> 'required|min:3|max:60',
         'sexo'=> 'required|min:1|max:1',
         'email'=> 'required|email',
-        'senha'=> 'required|min:6|max:20',                
+        'password'=> 'required|min:6|max:20',                
     ];
 }

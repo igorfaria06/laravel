@@ -1,5 +1,4 @@
 <?php
-
 /*
   |--------------------------------------------------------------------------
   | Application Routes
@@ -11,34 +10,53 @@
   |
  */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.index');
 });
 
+Route::get('admin', function () {
+    return view('admin.index');
+});
 
-Route::get('/user', 'UserController@index');
-Route::post('/user', 'UserController@store');
-Route::get('/user/{id}', 'UserController@show');
-Route::post('/user/{id}', 'UserController@update');
-Route::delete('/user/{id}', 'UserController@destroy');
-
-
-Route::get('/banco', 'BancoController@index');
-Route::post('/banco', 'BancoController@store');
-Route::get('/banco/{id}', 'BancoController@show');
-Route::post('/banco/{id}', 'BancoController@update');
-Route::delete('/banco/{id}', 'BancoController@destroy');
-
-Route::get('/conta', 'ContaBancariaController@index');
-Route::post('/conta', 'ContaBancariaController@store');
-Route::get('/conta/{id}', 'ContaBancariaController@show');
-Route::post('/conta/{id}', 'ContaBancariaController@update');
-Route::delete('/conta/{id}', 'ContaBancariaController@destroy');
+Route::get('admin/contas', function () {
+    return view('admin.contas.index');
+});
 
 //
-//Route::post('/oauth/access_token', function () {
-//    return Response::json(Authorizer::issueAccessToken());
+//Route::group(['prefix' => 'admin'], function () {
+//    return 'qjkwhkhjasd';
 //});
+
+
+
+Route::group(['middleware' => 'oauth'], function () {
+
+    Route::post('/login', 'UserController@login');
+
+    Route::get('/user', 'UserController@index');
+    Route::post('/user', 'UserController@store');
+    Route::get('/user/{id}', 'UserController@show');
+    Route::post('/user/{id}', 'UserController@update');
+    Route::delete('/user/{id}', 'UserController@destroy');
+
+    Route::get('/banco', 'BancoController@index');
+    Route::post('/banco', 'BancoController@store');
+    Route::get('/banco/{id}', 'BancoController@show');
+    Route::post('/banco/{id}', 'BancoController@update');
+    Route::delete('/banco/{id}', 'BancoController@destroy');
+
+    Route::get('/conta', 'ContaBancariaController@index');
+    Route::post('/conta', 'ContaBancariaController@store');
+    Route::get('/conta/{id}', 'ContaBancariaController@show');
+    Route::post('/conta/{id}', 'ContaBancariaController@update');
+    Route::delete('/conta/{id}', 'ContaBancariaController@destroy');
+});
+Route::post('/oauth/access_token', function () {
+    return Response::json(Authorizer::issueAccessToken());
+});
 //
 //Route::group(['middleware' => 'oauth'], function () {
 //
