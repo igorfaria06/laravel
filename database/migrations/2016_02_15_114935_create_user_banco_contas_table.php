@@ -18,8 +18,8 @@ class CreateUserBancoContasTable extends Migration {
             $table->foreign('dono_id')->references('id')->on('users');
             $table->integer('banco_id')->unsigned();
             $table->foreign('banco_id')->references('id')->on('bancos');
-            $table->integer('conta');
-            $table->integer('nome');
+            $table->string('conta');
+            $table->string('nome');
             $table->float('saldo');
             $table->string('descricao');
             $table->timestamps();
@@ -32,7 +32,7 @@ class CreateUserBancoContasTable extends Migration {
      * @return void
      */
     public function down() {
-        //
+        Schema::drop('user_banco_contas');
     }
 
 }

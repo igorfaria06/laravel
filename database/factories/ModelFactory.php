@@ -40,18 +40,26 @@ $factory->define(finLaravel\Entities\UserBancoConta::class, function (Faker\Gene
 });
 $factory->define(finLaravel\Entities\UserContaDespesa::class, function (Faker\Generator $faker) {
     return [
-        'dono_id' => rand(1, 3),
-        'conta_id' => '8',
-        'valor' => $faker->word,
+        'dono_id' => '1',
+        'conta_id' => '7',
         'nome' => $faker->name,
+        'status' => $faker->boolean(),
+        'data_pagamento' => $faker->dateTime,
+        'data_vencimento' => $faker->dateTime,
+        'descricao' => $faker->sentence,
+        'valor' => rand(1, 2000),
     ];
 });
 
 $factory->define(finLaravel\Entities\UserContaReceita::class, function (Faker\Generator $faker) {
     return [
-        'dono_id' => rand(1, 3),
-        'conta_id' => '8',
-        'valor' => $faker->word,
+        'dono_id' => '1',
+        'conta_id' => '7',
         'nome' => $faker->name,
+        'status' => $faker->boolean(),
+        'data_pagamento' => $faker->dateTime,
+        'data_vencimento' => $faker->dateTime,
+        'descricao' => $faker->sentence,
+        'valor' => rand(1, 2000),
     ];
 });

@@ -75,7 +75,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $this->service->update($request->all(), $id);
+        return $this->service->update($request->all(), $id);
     }
 
     /**
@@ -85,11 +85,11 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $this->repository->find($id)->delete();
+        return $this->repository->find($id)->delete();
     }
 
     public function login(Request $request) {
-        $this->service->login($request->all());
+        return $this->service->login($request->all());
     }
 }
     

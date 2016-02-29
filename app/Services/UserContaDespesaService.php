@@ -9,10 +9,12 @@
 namespace finLaravel\Services;
 
 use finLaravel\Repositories\UserContaDespesaRepository;
+use finLaravel\Repositories\UserBancoContaRepository;
 use finLaravel\Validators\UserContaDespesaValidator;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Illuminate\Contracts\Filesystem\Factory as Storage;
 use Illuminate\Filesystem\Filesystem;
+use finLaravel\Entities\UserBancoConta;
 
 /**
  * Description of ClientService
@@ -25,8 +27,10 @@ class UserContaDespesaService {
     private $validator;
     private $filesystem;
     private $storage;
+    protected $contaRepository;
 
-    public function __construct(UserContaDespesaRepository $repository, UserContaDespesaValidator $validator, Filesystem $filesystem, Storage $storage) {
+
+    public function __construct(UserContaDespesaRepository $repository, UserContaDespesaValidator $validator, Filesystem $filesystem, Storage $storage, UserBancoContaRepository $contaRepository) {
         $this->repository = $repository;
         $this->validator = $validator;
         $this->filesystem = $filesystem;
@@ -36,8 +40,10 @@ class UserContaDespesaService {
     public function create(array $data) {
 
         try {
-            $this->validator->with($data)->passesOrFail();            
-            return $this->repository->create($data);
+            $this->validator->with($data)->passesOrFail();
+            $data['dono_id'] = '1';
+            $this->repository->create($data);
+            return redirect('/admin/despesa');
         } catch (ValidatorException $ex) {
             return [
                 'error' => true,
@@ -50,7 +56,9 @@ class UserContaDespesaService {
 
         try {
             $this->validator->with($data)->passesOrFail();
-            return $this->repository->update($data, $id);
+            $data['dono_id'] = '1';
+            $this->repository->update($data, $id);
+            return redirect('/admin/despesa');
         } catch (ValidatorException $ex) {
             return [
                 'error' => true,
@@ -72,4 +80,6 @@ class UserContaDespesaService {
         }
     }
 
+   
+    
 }

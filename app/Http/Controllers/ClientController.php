@@ -72,7 +72,7 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        $this->service->update($request->all(), $id);
+        return $this->service->update($request->all(), $id);
     }
 
     /**
@@ -82,7 +82,7 @@ class ClientController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        $this->repository->find($id)->delete();
+        return $this->repository->find($id)->delete();
     }
 
 }

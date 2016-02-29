@@ -18,10 +18,6 @@ use Prettus\Validator\LaravelValidator;
 class UserBancoContaValidator extends LaravelValidator {
 
     protected $rules = [
-        'dono_id' => 'required',
-        'banco_id' => 'required',
-        'conta' => 'required',
-        'descricao' => 'required',
     ];
 
 }

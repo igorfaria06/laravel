@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder {
             'nome' => 'igor',
             'sexo' => 'm',
             'email' => 'email@com.com',
-            'password' => '123456',
+            'password' => bcrypt('123456'),
             'remember_token' => str_random(10),
         ]);
         factory(\finLaravel\Entities\User::class, 10)->create();

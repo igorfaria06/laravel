@@ -16,10 +16,6 @@ use Prettus\Validator\LaravelValidator;
  * @author proativos
  */
 class UserValidator extends LaravelValidator {
-    protected $rules = [
-        'nome'=> 'required|min:3|max:60',
-        'sexo'=> 'required|min:1|max:1',
-        'email'=> 'required|email',
-        'password'=> 'required|min:6|max:20',                
+    protected $rules = [               
     ];
 }

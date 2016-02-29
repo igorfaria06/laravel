@@ -36,8 +36,10 @@ class UserContaReceitaService {
     public function create(array $data) {
 
         try {
-            $this->validator->with($data)->passesOrFail();            
-            return $this->repository->create($data);
+            $this->validator->with($data)->passesOrFail();
+            $data['dono_id'] = '1';
+            $this->repository->create($data);
+            return redirect('/admin/contas');
         } catch (ValidatorException $ex) {
             return [
                 'error' => true,
@@ -50,7 +52,9 @@ class UserContaReceitaService {
 
         try {
             $this->validator->with($data)->passesOrFail();
-            return $this->repository->update($data, $id);
+            $data['dono_id'] = '1';
+            $this->repository->update($data, $id);
+            return redirect('/admin/contas');
         } catch (ValidatorException $ex) {
             return [
                 'error' => true,

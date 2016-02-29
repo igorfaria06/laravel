@@ -30,26 +30,26 @@
         <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Contas</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-                <li><a href="#">Contas Bancarias</a></li>
-                <li><a href="#">Transferencias</a></li>
+                <li><a href="{{url()}}/admin/conta">Contas Bancarias</a></li>
+                <li><a href="{{url()}}/admin/conta/transferencias">Transferencias</a></li>
             </ul>
         </li>
         <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Receitas</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-                <li><a href="#">Receitas</a></li>
-                <li><a href="#">Tipos de Receitas</a></li>
+                <li><a href="{{url()}}/admin/receita">Receitas</a></li>
+                <li><a href="{{url()}}/admin/tipo-receita">Tipos de Receitas</a></li>
                 <li><a href="#">Relatorios</a></li>
             </ul>
         </li>
         <li class="treeview">
             <a href="#"><i class="fa fa-link"></i> <span>Despesas</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-                <li><a href="#">Despesas</a></li>
-                <li><a href="#">Tipos de as</a></li>
+                <li><a href="{{url()}}/admin/despesa">Despesas</a></li>
+                <li><a href="{{url()}}/admin/tipo-despesa">Tipos de as</a></li>
                 <li><a href="#">Relatorios</a></li>
             </ul>
         </li>
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Cartao de Credito</span></a></li>
+        <li class="active"><a href="{{url()}}/admin/cartao"><i class="fa fa-link"></i> <span>Cartao de Credito</span></a></li>
     </ul><!-- /.sidebar-menu -->
 </section>

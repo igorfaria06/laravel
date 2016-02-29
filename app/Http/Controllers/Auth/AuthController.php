@@ -2,7 +2,7 @@
 
 namespace finLaravel\Http\Controllers\Auth;
 
-use finLaravel\User;
+use finLaravel\Entities\User;
 use Validator;
 use finLaravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;

@@ -10,11 +10,11 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model implements AuthenticatableContract,
-                                    AuthorizableContract,
-                                    CanResetPasswordContract
-{
-    use Authenticatable, Authorizable, CanResetPassword;
+class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
+
+    use Authenticatable,
+        Authorizable,
+        CanResetPassword;
 
     /**
      * The database table used by the model.
@@ -36,21 +36,17 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-    
-    public function projetos() {
-        return $this->belongsToMany(Projeto::class, 'projeto_membros', 'membro_id', 'projeto_id');
-    }
-    
+
+
     public function contas() {
-        return $this->hasMany(UserBancoConta::class, 'dono_id', 'id');
+        return $this->hasMany(UserBancoConta::class, 'id');
     }
     
-      public function despesas() {
-        return $this->hasMany(UserContaDespesa::class, 'dono_id', 'id');
+    public function despesas() {
+        return $this->hasMany(UserContaDespesa::class, 'id');
     }
     
-     public function receitas() {
-        return $this->hasMany(UserContaReceita::class, 'dono_id', 'id');
+    public function receitas() {
+        return $this->hasMany(UserContaReceita::class, 'id');
     }
-    
 }

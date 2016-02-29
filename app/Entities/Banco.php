@@ -15,8 +15,11 @@ class Banco extends Model implements Transformable
         'pais',
     ];
 
+    protected $table = 'bancos';
+
+
     public function contas() {
-        return $this->hasMany(UserBancoConta::class);
+        return $this->hasMany(UserBancoConta::class, 'id');
     }
     
     

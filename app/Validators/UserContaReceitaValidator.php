@@ -16,7 +16,8 @@ use Prettus\Validator\LaravelValidator;
  * @author proativos
  */
 class UserContaReceitaValidator extends LaravelValidator {
+
     protected $rules = [
-                              
     ];
+
 }

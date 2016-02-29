@@ -16,9 +16,6 @@ use Prettus\Validator\LaravelValidator;
  * @author proativos
  */
 class BancoValidator extends LaravelValidator {
-    protected $rules = [
-        'nome'=> 'required',
-        'pais'=> 'required',
-                       
+    protected $rules = [                       
     ];
 }

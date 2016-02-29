@@ -1,3 +1,4 @@
+<?php $titulo = 'Dashboard'; $subtitulo ='home'?>
 @extends('admin.templates.painel')
 
 @section('header')

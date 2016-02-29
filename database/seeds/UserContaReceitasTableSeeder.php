@@ -10,9 +10,6 @@ class UserContaReceitasTableSeeder extends Seeder {
      * @return void
      */
     public function run() {
-
-        // Apaga todos dados da tabela e cria dez registros
-
         factory(\finLaravel\Entities\UserContaReceita::class, 10)->create();
     }
 

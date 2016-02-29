@@ -3,23 +3,25 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
         <title>FINANCEIRO | @yield('titulo')</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.5 -->
-        <link rel="stylesheet" href="{{ url() }}/assets/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="{{ url() }}/assets/admin/bootstrap/css/bootstrap.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="{{ url() }}/assets/admin/dist/css/AdminLTE.min.css">
+
         <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-      page. However, you can choose any other skin. Make sure you
-      apply the skin class to the body tag so the changes take effect.
+page. However, you can choose any other skin. Make sure you
+apply the skin class to the body tag so the changes take effect.
         -->
         <link rel="stylesheet" href="{{ url() }}/assets/admin/dist/css/skins/skin-blue.css">
-        
+
         @yield('css')
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -97,7 +99,7 @@
                 <!-- Default to the left -->
                 <strong>Copyright &copy; 2015 <a href="#">Igor Faria</a>.</strong> Todos Direitos Reservados.
             </footer>
-            
+
         </div><!-- ./wrapper -->
 
         <!-- REQUIRED JS SCRIPTS -->
@@ -108,7 +110,7 @@
         <script src="{{ url()}}/assets/admin/bootstrap/js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
         <script src="{{url()}}/assets/admin/dist/js/app.min.js"></script>
-        
+
         @yield('scripts')
 
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
